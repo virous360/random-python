@@ -1,4 +1,4 @@
-from uni import *
+#from uni import *
 dic1 = [
      1,"I",
      5,"V",
@@ -21,7 +21,8 @@ dic2 = ["I","V","X","L","C","D","M"]
 def __int_to_roman(int1:int):
      roman = []
      if 3999 < int1 or int1 < 1:
-          log("dec must be between 1 and 3999. given "+str(int1))
+          print("dec must be between 1 and 3999. given "+str(int1))
+          exit()
      l = [int(x) for x in str(int1)]
      l.reverse()
      for i in range(len(l)):
@@ -88,4 +89,4 @@ def roman_converter(arg) -> str|int:
                a.append(roman_converter(i))
           return a
      else :
-          log("error in data type")
+          print("error in data type")

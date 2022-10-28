@@ -3,6 +3,7 @@
 from functools import wraps
 import time
 import os
+import json
 
 #LOGS
 DEBUG = False
@@ -54,18 +55,17 @@ def cache_me(func):
         return cache[args]
     return wrap
 
-
 #classes
-class create_file():
+class raw_file():
     def __init__(self,name:str) -> None:
         self.__name__ = name
         self.f = open(name,"w")
         self.f.write("")
         self.close()
         log("created file object of name "+self.__name__)
-    def read(self) -> list:
+    def read(self) -> str:
         self.__open("r")
-        a = self.f.read()
+        a = str(self.f.read())
         self.close()
         log("read all of file : "+self.__name__)
         return a
@@ -89,3 +89,26 @@ class create_file():
         self.__open("w")
         a = self.f.write(string)
         self.close()
+    def __enter__(self):
+        log(f"opening file... {self.name}")
+        return self
+    def __exit__(self, type_error,value_error,exception_traceback):
+        log(f"exiting .... {self.name}")
+        if type_error is not None :
+            log(f"type error : {type_error}")
+        elif value_error is not None :
+            log(f"value error : {value_error}")
+        elif exception_traceback is not None :
+            log(f"exception traceback error : {exception_traceback}")
+
+class json_file():
+    def __init__(self,name) -> None:
+        self.name = name+".json"
+    def read(self):
+        x = json.
+        return x
+    
+
+
+
+#https://raw.githubusercontent.com/dwyl/english-words/master/words_dictionary.json
