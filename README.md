@@ -9,3 +9,9 @@
 ## NOTES
 
     some scripts may require the uni.py script in the main directory to work
+
+## to_roman
+
+### description
+
+    convert int to roman equivalent or roman to int, also contains a func. to output all possible romans to a file 

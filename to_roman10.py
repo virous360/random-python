@@ -1,7 +1,4 @@
-from time import sleep
 from uni import *
-clr_logs()
-log("loaded uni.py... starting script : "+str(__file__).split("\\")[-1])
 dic1 = [
      1,"I",
      5,"V",
@@ -19,11 +16,10 @@ dic = [
      400,"CD",
      900,"CM"
 ]
+dic2 = ["I","V","X","L","C","D","M"]
 
-
-def to_roman(int1:int):
+def __int_to_roman(int1:int):
      roman = []
-     log("started function to_roman")
      if 3999 < int1 or int1 < 1:
           log("dec must be between 1 and 3999. given "+str(int1))
      l = [int(x) for x in str(int1)]
@@ -39,9 +35,10 @@ def to_roman(int1:int):
                if l[i] < 5:
                     roman.append(dic1[dic1.index((10**i))+1]*l[i])
                else :
-                    l[i] = l[i]-5*(10**i)
-                    roman.append(dic1[dic1.index((10**i))+1]*l[i])
-                    roman.append(dic1[dic1.index((5)*(10**i))+1])
+                    m5 = (l[i]-5)*(10**i)
+                    roman.append(__int_to_roman(m5))
+                    roman.append(dic1[dic1.index(5*(10**i))+1])
+                    # roman.append(dic1[dic1.index(m5*(10**i))+1])
           else:
                print("ERROR",eli,l[i],(10**i))
                exit()
@@ -49,18 +46,46 @@ def to_roman(int1:int):
      return "".join(roman)
 
 # Main
-@timer
-def all_roman():
-     f = open("roman_numbers", "w")
-     f.write("")
-     f.close()
-     f = open("roman_numbers", "a")
+def all_romans() -> list:
+     a = []
      for i in range (1,4000):
-          f.write(str(i)+" : "+to_roman(i)+"\n")
-     f.close()
+          a.append([i,__int_to_roman(i)])
+     return a 
 
+def __get_value(string:str) -> int:
+     return dic1[dic1.index(string)-1]
 
-all_roman()
-log("EOF")
-log("printing file contents")
-print_logs()
+def __roman_to_int(roman:str) -> int:
+     final = 0
+     roman_l = list(roman.upper())
+     index = list(range(len(roman_l)))
+     for i in roman_l:
+          if i not in dic2:
+               return
+     while len(index)>0:
+          current = roman_l[index.pop(0)]
+          try:
+               next = __get_value(roman_l[roman_l.index(current)+1])
+          except:
+               next = 0
+          current = __get_value(current)
+          if current >= next :
+               final += current
+          else :
+               final += next-current
+               index.pop(0)
+     return final
+
+def roman_converter(arg) -> str|int:
+     type_arg = str(type(arg))[:-2][8:]
+     if type_arg == "int" : 
+          return __int_to_roman(arg)
+     elif type_arg == "str":
+          return __roman_to_int(arg)
+     elif type_arg == "list":
+          a = []
+          for i in arg:
+               a.append(roman_converter(i))
+          return a
+     else :
+          log("error in data type")
