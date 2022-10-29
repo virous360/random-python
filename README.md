@@ -15,3 +15,10 @@
 ### description
 
     convert int to roman equivalent or roman to int, also contains a func. to output all possible romans to a file 
+
+## wordle extended
+
+## depends on:
+
+    https://digi.bib.uni-mannheim.de/tesseract/
+    *after install add it env. variables
