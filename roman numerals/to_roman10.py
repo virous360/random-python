@@ -62,7 +62,7 @@ def __roman_to_int(roman:str) -> int:
      index = list(range(len(roman_l)))
      for i in roman_l:
           if i not in dic2:
-               return
+               return 0 
      while len(index)>0:
           current = roman_l[index.pop(0)]
           try:
@@ -77,7 +77,7 @@ def __roman_to_int(roman:str) -> int:
                index.pop(0)
      return final
 
-def roman_converter(arg) -> str|int:
+def roman_converter(arg) -> str|int|list:
      type_arg = str(type(arg))[:-2][8:]
      if type_arg == "int" : 
           return __int_to_roman(arg)
@@ -90,3 +90,4 @@ def roman_converter(arg) -> str|int:
           return a
      else :
           print("error in data type")
+          return ""

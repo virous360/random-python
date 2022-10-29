@@ -1,4 +1,16 @@
-log 9:42:12 : closed file : fibonacci 
-log 9:42:12 : created file object of name fibonacci 
-log 9:42:12 : WARING : opening files in raw mode can be dangerous... plz make sure to close the file after finishing 
-log 9:42:12 : closed file : fibonacci 
+log 12:43:53 : testing for file presence 
+log 12:43:53 : opened file      : cleaned.json 
+log 12:43:53 : read all of file : cleaned.json 
+log 12:43:53 : closed file      : cleaned.json 
+log 12:43:53 : skipping clear file : json detected 
+log 12:43:53 : opened file      : cleaned.json 
+log 12:43:53 : read all of file : cleaned.json 
+log 12:43:53 : closed file      : cleaned.json 
+log 12:43:53 : testing for file presence 
+log 12:43:53 : opened file      : wordle_specials.json 
+log 12:43:53 : read all of file : wordle_specials.json 
+log 12:43:53 : closed file      : wordle_specials.json 
+log 12:43:53 : skipping clear file : json detected 
+log 12:43:53 : opened file      : wordle_specials.json 
+log 12:43:53 : read all of file : wordle_specials.json 
+log 12:43:53 : closed file      : wordle_specials.json 

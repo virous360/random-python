@@ -14,7 +14,7 @@ class create_file():
         self.f = open(name,"w")
         self.f.write("")
         self.close()
-    def read(self) -> list:
+    def read(self):
         self.__open("r")
         a = self.f.read()
         self.close()
