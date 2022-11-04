@@ -1,0 +1,8 @@
+log 17:24:57 : testing for file presence 
+log 17:24:57 : opened file      : bettercleaned.json 
+log 17:24:57 : read all of file : bettercleaned.json 
+log 17:24:57 : closed file      : bettercleaned.json 
+log 17:24:57 : skipping clear file : json detected 
+log 17:24:57 : opened file      : bettercleaned.json 
+log 17:24:57 : read all of file : bettercleaned.json 
+log 17:24:57 : closed file      : bettercleaned.json 

@@ -1,0 +1,24 @@
+log 7:45:52 : testing for file presence 
+log 7:45:52 : opened file      : cleaned.json 
+log 7:45:52 : read all of file : cleaned.json 
+log 7:45:52 : closed file      : cleaned.json 
+log 7:45:52 : skipping clear file : json detected 
+log 7:45:52 : opened file      : cleaned.json 
+log 7:45:52 : read all of file : cleaned.json 
+log 7:45:52 : closed file      : cleaned.json 
+log 7:45:52 : testing for file presence 
+log 7:45:52 : opened file      : wordle_specials.json 
+log 7:45:52 : read all of file : wordle_specials.json 
+log 7:45:52 : closed file      : wordle_specials.json 
+log 7:45:52 : skipping clear file : json detected 
+log 7:45:52 : opened file      : wordle_specials.json 
+log 7:45:52 : read all of file : wordle_specials.json 
+log 7:45:52 : closed file      : wordle_specials.json 
+log 7:45:52 : testing for file presence 
+log 7:45:52 : opened file      : bettercleaned.json 
+log 7:45:52 : read all of file : bettercleaned.json 
+log 7:45:52 : closed file      : bettercleaned.json 
+log 7:45:52 : skipping clear file : json detected 
+log 7:45:52 : opened file      : bettercleaned.json 
+log 7:45:52 : read all of file : bettercleaned.json 
+log 7:45:52 : closed file      : bettercleaned.json 
